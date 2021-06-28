@@ -3,7 +3,7 @@ Global / onChangedBuildSource := ReloadOnSourceChanges
 name := "play-prometheus-filters"
 organization := "io.github.jyllands-posten"
 
-version := "0.6.3"
+version := "0.6.4"
 
 lazy val root = project in file(".")
 
