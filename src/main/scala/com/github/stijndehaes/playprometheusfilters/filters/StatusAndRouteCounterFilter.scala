@@ -2,13 +2,12 @@ package com.github.stijndehaes.playprometheusfilters.filters
 
 import akka.stream.Materializer
 import com.github.stijndehaes.playprometheusfilters.metrics.CounterRequestMetrics.CounterRequestMetricBuilder
-import com.github.stijndehaes.playprometheusfilters.metrics.DefaultPlayUnmatchedDefaults
+import com.github.stijndehaes.playprometheusfilters.metrics.{ CounterRequestMetric, DefaultPlayUnmatchedDefaults }
 import io.prometheus.client.CollectorRegistry
 import play.api.Configuration
 
 import javax.inject.{ Inject, Singleton }
 import scala.concurrent.ExecutionContext
-import com.github.stijndehaes.playprometheusfilters.metrics.CounterRequestMetric
 
 /**
   * A [[MetricsFilter]] using a counter metric to count requests.

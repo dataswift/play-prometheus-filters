@@ -10,6 +10,7 @@ import scala.concurrent.{ ExecutionContext, Future }
 import scala.util.matching.Regex
 
 /** Generic filter implementation to add metrics for a request.
+  *
   * Subclasses only have to define the `metrics` property to apply metrics.
   *
   * {{{
@@ -78,9 +79,6 @@ abstract class MetricsFilter(
       if (!urlIsExcluded) {
         val endTime     = System.nanoTime
         val requestTime = (endTime - startTime) / resolution
-        println(
-          s"DIFF: ${endTime - startTime} - Metric: ${requestTime} at ${metricResolution} resolution."
-        )
         metrics.foreach(_.mark(requestTime))
       }
 

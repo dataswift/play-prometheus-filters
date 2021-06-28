@@ -2,15 +2,14 @@ package com.github.stijndehaes.playprometheusfilters.filters
 
 import akka.stream.Materializer
 import com.github.stijndehaes.playprometheusfilters.metrics.CounterRequestMetrics.CounterRequestMetricBuilder
-import com.github.stijndehaes.playprometheusfilters.metrics.DefaultPlayUnmatchedDefaults
 import com.github.stijndehaes.playprometheusfilters.metrics.LatencyRequestMetrics.LatencyRequestMetricsBuilder
+import com.github.stijndehaes.playprometheusfilters.metrics.{ DefaultPlayUnmatchedDefaults, PlayRequestMetric }
+import io.prometheus.client.Collector.Describable
 import io.prometheus.client._
 import play.api.Configuration
 
 import javax.inject.{ Inject, Singleton }
 import scala.concurrent.ExecutionContext
-import com.github.stijndehaes.playprometheusfilters.metrics.PlayRequestMetric
-import io.prometheus.client.Collector.Describable
 
 /**
   * A [[MetricsFilter]] using a both a histogram and counter metric to record latency and count requests.
